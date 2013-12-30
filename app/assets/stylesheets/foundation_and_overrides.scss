@@ -1,4 +1,4 @@
-// 
+//
 // FOUNDATION SETTINGS
 //
 
@@ -991,3 +991,10 @@
 // $topbar-sticky-class: ".sticky";
 // $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
 @import 'foundation';
+
+.side-panel{
+  @extend .panel;
+  margin-top: 15px;}
+
+.field_with_errors label{
+  color: #f04124;}

@@ -1,0 +1,49 @@
+<%= form_for @user, data: {abide: ''} do |form| %>
+  <% if @user.errors.any? %>
+    <div class="row panel callout radius">
+      <p>Aşağıdaki hataları düzeltip, tekrar deneyiniz.</p>
+      <ul class="square">
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="large-6 columns">
+      <%= form.label :first_name %>
+      <%= form.text_field :first_name, required: true, pattern: :alpha %>
+      <%= show_error_message %>
+    </div>
+    <div class="large-6 columns">
+      <%= form.label :last_name %>
+      <%= form.text_field :last_name, required: true, pattern: :alpha %>
+      <%= show_error_message %>
+    </div>
+    <div class="large-12 columns">
+      <%= form.label :username %>
+      <%= form.text_field :username, required: true, pattern: :alpha %>
+      <%= show_error_message %>
+    </div>
+    <div class="large-12 columns">
+      <%= form.label :email %>
+      <%= form.email_field :email, required: true, pattern: :email %>
+      <%= show_error_message('Geçerli bir e-posta adresi giriniz.') %>
+    </div>
+    <div class="large-6 columns">
+      <%= form.label :password %>
+      <%= form.password_field :password, required: true, pattern: :password %>
+      <%= show_error_message('Parola, bir büyük harf, bir rakam ve bir
+      de özel karakter içermeli ve en az 8 karakterden oluşmalıdır.') %>
+    </div>
+    <div class="large-6 columns">
+      <%= form.label :password_confirmation %>
+      <%= form.password_field :password_confirmation, required: true, pattern: :password %>
+      <%= show_error_message('Parola, bir büyük harf, bir rakam ve bir
+      de özel karakter içermeli ve en az 8 karakterden oluşmalıdır.') %>
+    </div>
+    <div class="large-12 columns">
+      <%= form.submit "Sign up", class: 'medium button right' %>
+    </div>
+  </div>
+<% end %>
