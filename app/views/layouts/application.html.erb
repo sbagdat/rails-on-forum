@@ -15,26 +15,11 @@
 
   <body>
 
-    <div class="contain-to-grid">
-      <nav class="top-bar">
-        <ul class="title-area">
-          <li class="name">
-            <h1><a href="/">Rails on Forum</a></h1>
-          </li>
-        </ul>
-        <section class="top-bar-section">
-          <ul class="right">
-            <li class="divider"></li>
-            <li><%= link_to "Kaydol", register_path %></li>
-            <li class="divider"></li>
-            <li><a href="#">Oturum Aç</a></li>
-            <li class="divider"></li>
-          </ul>
-        </section>
-      </nav>
-    </div>
+    <%= render 'layouts/top_bar'%>
 
     <div class="row">
+      <%= render 'layouts/flash_messages'%>
+
       <%= content_for?(:content) ? yield(:content) : yield %>
     </div>
 

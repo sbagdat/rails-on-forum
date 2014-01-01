@@ -932,7 +932,7 @@
 
 // Height and margin
 // $topbar-height: 45px;
-// $topbar-margin-bottom: 0;
+$topbar-margin-bottom: 15px;
 
 // Control Input height for top bar
 
@@ -991,10 +991,3 @@
 // $topbar-sticky-class: ".sticky";
 // $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
 @import 'foundation';
-
-.side-panel{
-  @extend .panel;
-  margin-top: 15px;}
-
-.field_with_errors label{
-  color: #f04124;}
