@@ -6,3 +6,7 @@
  */
 
 .field_with_errors label{ color: #f04124; }
+
+.profile-image {
+  margin-top: 15px;
+  border-radius: 50%; }
