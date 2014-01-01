@@ -1,0 +1,10 @@
+<% content_for(:profile_content) do%>
+  <h2><%= page.capitalize %></h2>
+  <% if @data.blank? %>
+    <p>Kullanıcıya ait <%= page %> bulunmamaktadır.</p>
+  <% else %>
+    <% @data.each do |data| %>
+      <div><%= data %></div>
+    <% end %>
+  <% end %>
+<% end %>
