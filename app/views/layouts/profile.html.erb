@@ -6,15 +6,15 @@
     </div>
 
     <div class="large-10 columns">
-      <h2><%= "#{@user.first_name} #{@user.last_name}" %></h2>
+      <h2><%= @user.name %></h2>
       <p><%= @user.email %></p>
       <div class="button-bar">
         <ul class="button-group radius">
-          <li><%= link_to "Konular", user_path(@user, sayfa: 'konular'),
+          <li><%= link_to "Konular", profile_path(@user, sayfa: 'konular'),
                                      class: 'small button secondary' %></li>
-          <li><%= link_to "Yorumlar", user_path(@user, sayfa: 'yorumlar'),
+          <li><%= link_to "Yorumlar", profile_path(@user, sayfa: 'yorumlar'),
                                       class: 'small button secondary' %></li>
-          <li><%= link_to "Profilimi düzenle", edit_user_path(@user),
+          <li><%= link_to "Profilimi düzenle", edit_profile_path(@user),
                                                class: 'small button secondary' %></li>
           <li><%= link_to "Hesabımı sil.", @user,
                                            method: :delete,

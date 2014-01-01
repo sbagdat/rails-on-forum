@@ -12,5 +12,5 @@ class User < ActiveRecord::Base
                          email:      true
 
   def name() "#{first_name} #{last_name}" end
-
+  def to_param() username end
 end
