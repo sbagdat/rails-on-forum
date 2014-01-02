@@ -14,12 +14,14 @@
                                      class: 'small button secondary' %></li>
           <li><%= link_to "Yorumlar", profile_path(@user, sayfa: 'yorumlar'),
                                       class: 'small button secondary' %></li>
-          <li><%= link_to "Profilimi düzenle", edit_profile_path(@user),
-                                               class: 'small button secondary' %></li>
-          <li><%= link_to "Hesabımı sil.", @user,
-                                           method: :delete,
-                                           data: {confirm: 'Hesabınızı silmek istediğinize emin misiniz?'},
-                                           class: 'small button alert' %></li>
+          <% if current_user == @user %>
+            <li><%= link_to "Profilimi düzenle", edit_profile_path(@user),
+                                                 class: 'small button secondary' %></li>
+            <li><%= link_to "Hesabımı sil.", @user,
+                                             method: :delete,
+                                             data: {confirm: 'Hesabınızı silmek istediğinize emin misiniz?'},
+                                             class: 'small button alert' %></li>
+          <% end %>
         </ul>
       </div>
     </div><hr>
