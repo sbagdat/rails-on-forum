@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      login(@user)
       redirect_to profile_path(@user), notice: 'Aramıza hoş geldin!'
     else
       render :new
