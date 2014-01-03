@@ -1,7 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+forums = ['Ruby ve Ailesi', 'Programlama Genel', 'Genel Konular', 'Otomobil Kulübü', 'Tasarım Genel', 'HTML&CSS']
+
+forums.each do |forum|
+  Forum.find_or_create_by_name(forum)
+  puts "- #{forum} forumu oluşturuldu."
+end
