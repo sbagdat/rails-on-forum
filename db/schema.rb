@@ -11,13 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140103031635) do
+ActiveRecord::Schema.define(version: 20140103060444) do
 
   create_table "forums", force: true do |t|
     t.string "name", null: false
   end
 
   add_index "forums", ["name"], name: "index_forums_on_name", unique: true
+
+  create_table "topics", force: true do |t|
+    t.string   "title",      null: false
+    t.text     "body",       null: false
+    t.integer  "user_id"
+    t.integer  "forum_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "topics", ["forum_id"], name: "index_topics_on_forum_id"
+  add_index "topics", ["user_id"], name: "index_topics_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "username",        null: false
