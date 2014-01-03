@@ -1,0 +1,14 @@
+<% content_for(:content) do %>
+  <div class="large-3 columns panel radius">
+    <h4>FORUMLAR</h4>
+    <ul class="side-nav">
+      <%= render @forums %>
+    </ul>
+  </div>
+
+  <div class="large-9 columns">
+    <%= yield :forum_content %>
+  </div>
+<% end %>
+
+<%= render template: "layouts/application" %>
