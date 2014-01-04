@@ -15,4 +15,16 @@ class ApplicationController < ActionController::Base
   def signed_in?
     current_user
   end
+
+  def validate_user!
+    unless signed_in?
+      redirect_to login_url, alert: 'Bu sayfaya erişmeden önce oturum açmalısınız.'
+    end
+  end
+
+  def validate_permission!(user)
+    unless current_user == user
+      redirect_to root_url, alert: 'Bu işlemi gerçekleştirmek için gerekli olan yetkiye sahip değilsiniz!'
+    end
+  end
 end

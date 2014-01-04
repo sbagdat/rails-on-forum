@@ -1,6 +1,12 @@
 <% content_for(:forum_content) do %>
-  <div class="large-12 columns">
-    <h1><%= @forum.name %> Forumu</h1><hr>
-    <p>Bu foruma ait konular burada listelenecek...</p>
+  <div class="columns">
+    <div>
+      <h1 class="left"><%= @forum.name %> Forumu</h1>
+      <% if signed_in? %>
+        <%= link_to 'Konu Aç', new_forum_topic_path(@forum),
+                               class: 'small secondary new button right round' %><hr>
+      <% end %>
+    </div>
+    <div class="columns">Bu foruma ait konular burada listelenecek...</div>
   </div>
 <% end %>
