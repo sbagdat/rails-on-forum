@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :validate_user!
   before_action only: [:edit, :update, :destroy] do
-    validate_permission!(set_topic.user)
+    validate_permission!(select_comment.user)
   end
   before_action :select_comment, only: [:edit, :update, :destroy]
 
@@ -20,6 +20,21 @@ class CommentsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit() end
+
+  def update
+    if @comment.update(comment_params)
+      redirect_to @comment.topic, notice: 'Yorumunuz başarıyla güncellendi.'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @comment.destroy
+    redirect_to @comment.topic, notice: 'Yorumunuz başarıyla silindi'
   end
 
   private
