@@ -10,7 +10,15 @@ RailsOnForum::Application.routes.draw do
   end
 
   resources :topics, except: [:index, :new, :create],
-                     path: 'konular', path_names: {edit: 'duzenle'}
+                     path: 'konular', path_names: {edit: 'duzenle'} do
+    resources :comments, only: [:new, :create],
+                         path: 'yorumlar',
+                         path_names: {new: 'yeni'}
+  end
+
+  resources :comments, only: [:edit, :update, :destroy],
+                       path: 'yorumlar',
+                       path_names: {edit: 'duzenle'}
 
   resources :users,   only: [:create, :update, :destroy]
   get '/kaydol',      to: 'users#new',  as: :register

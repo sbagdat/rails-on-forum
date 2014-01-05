@@ -10,7 +10,8 @@
   </small>
 </div>
 <div>
-    <%= link_to "Yorum Ekle", '#', class:"tiny button radius" if signed_in? %>
+    <%= link_to "Yorum Ekle", new_topic_comment_path(@topic),
+                              class:"tiny button radius" if signed_in? %>
     <% if current_user == @topic.user %>
       <%= link_to "Düzenle", edit_topic_path(@topic), class:"tiny button radius" %>
       <%= link_to "Sil", @topic,

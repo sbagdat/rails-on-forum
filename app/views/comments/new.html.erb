@@ -1,0 +1,15 @@
+<div class="topics panel columns radius ">
+  <h2><%= @topic.title %></h2>
+  <p><%= @topic.body  %></p>
+  <small class="details">
+    <span class='forum-name'>
+      <%= link_to @topic.forum.name, @topic.forum %>
+    </span>
+    <%= link_to_unless_current @topic.user.username, profile_path(@topic.user) %>
+    tarafından <%= time_ago_in_words @topic.created_at %> önce gönderildi.
+  </small>
+</div>
+<div class="small-11 columns offset-1">
+  <h4>Konuya yorum yapın.</h4>
+  <%= render 'form' %>
+</div>

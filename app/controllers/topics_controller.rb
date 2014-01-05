@@ -11,18 +11,15 @@ class TopicsController < ApplicationController
   def new
     @forum = Forum.find(params[:forum_id])
     @topic = @forum.topics.new
-    # @form_url = 'forum_topics_path'
   end
 
   def edit
-    # @form_url = 'edit_topic_path(@topic)'
   end
 
   def create
     @forum = Forum.find(params[:forum_id])
     @topic = @forum.topics.new(topic_params)
     @topic.user = current_user
-    # @form_url = 'forum_topics_path'
 
     if @topic.save
       redirect_to @topic, notice: 'Konu başarıyla oluşturuldu'
@@ -32,7 +29,6 @@ class TopicsController < ApplicationController
   end
 
   def update
-    # @form_url = 'edit_topic_path(@topic)'
     if @topic.update(topic_params)
       redirect_to @topic, notice: 'Konu başarıyla güncellendi.'
     else
