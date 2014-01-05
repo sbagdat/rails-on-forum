@@ -4,9 +4,6 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){
-  $(document).foundation();
-  $(document).foundation('abide','events');
-});
+$(function(){ $(document).foundation(); });
 
 

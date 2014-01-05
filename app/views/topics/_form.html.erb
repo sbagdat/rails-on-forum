@@ -1,5 +1,6 @@
 <div class="large-12 medium-12 medium-centered columns">
-<%= form_for @topic, url: forum_topics_path do |form| %>
+<% form_url = params[:action] == 'new' ? forum_topics_path : @topic %>
+<%= form_for @topic, url: form_url do |form| %>
   <% if @topic.errors.any? %>
     <div class="row panel callout radius">
       <p>Aşağıdaki hataları düzeltip, tekrar deneyiniz.</p>

@@ -1,0 +1,25 @@
+<div class="topics panel columns radius ">
+  <h2><%= @topic.title %></h2>
+  <p><%= @topic.body  %></p>
+  <small class="details">
+    <span class='forum-name'>
+      <%= link_to @topic.forum.name, @topic.forum %>
+    </span>
+    <%= link_to_unless_current @topic.user.username, profile_path(@topic.user) %> tarafından
+    <%= time_ago_in_words @topic.created_at %> önce gönderildi.
+  </small>
+</div>
+<div>
+    <%= link_to "Yorum Ekle", '#', class:"tiny button radius" if signed_in? %>
+    <% if current_user == @topic.user %>
+      <%= link_to "Düzenle", edit_topic_path(@topic), class:"tiny button radius" %>
+      <%= link_to "Sil", @topic,
+                         method: :delete,
+                         class:"tiny button alert radius",
+                         data: {confirm: 'Konuyu silmek istediğinize emin misiniz?'} %>
+    <% end %>
+</div>
+<div class="comments">
+  <h2>Yorumlar (#)</h2><hr>
+  Yorumlar burada listelenecek
+</div>

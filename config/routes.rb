@@ -9,7 +9,7 @@ RailsOnForum::Application.routes.draw do
                        path_names: {new: 'yeni'}
   end
 
-  resources :topics, only: [:show, :edit, :update],
+  resources :topics, except: [:index, :new, :create],
                      path: 'konular', path_names: {edit: 'duzenle'}
 
   resources :users,   only: [:create, :update, :destroy]

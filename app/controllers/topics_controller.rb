@@ -11,15 +11,18 @@ class TopicsController < ApplicationController
   def new
     @forum = Forum.find(params[:forum_id])
     @topic = @forum.topics.new
+    # @form_url = 'forum_topics_path'
   end
 
   def edit
+    # @form_url = 'edit_topic_path(@topic)'
   end
 
   def create
     @forum = Forum.find(params[:forum_id])
     @topic = @forum.topics.new(topic_params)
     @topic.user = current_user
+    # @form_url = 'forum_topics_path'
 
     if @topic.save
       redirect_to @topic, notice: 'Konu başarıyla oluşturuldu'
@@ -29,23 +32,17 @@ class TopicsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @topic.update(topic_params)
-        format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @topic.errors, status: :unprocessable_entity }
-      end
+    # @form_url = 'edit_topic_path(@topic)'
+    if @topic.update(topic_params)
+      redirect_to @topic, notice: 'Konu başarıyla güncellendi.'
+    else
+      render :edit
     end
   end
 
   def destroy
     @topic.destroy
-    respond_to do |format|
-      format.html { redirect_to topics_url }
-      format.json { head :no_content }
-    end
+    redirect_to root_url, notice: 'Konu başarıyla silindi'
   end
 
   private
