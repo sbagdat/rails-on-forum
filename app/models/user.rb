@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  has_many :topics, dependent: :destroy
+  has_many :topics,   dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   validates :username,   presence:   true,
                          uniqueness: { case_sensitive: false },
