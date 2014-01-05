@@ -25,8 +25,7 @@ class UsersController < ApplicationController
     if sayfa == 'konular'
       @data = @user.topics
     else
-      #TODO: Comment modeli oluşturulduğunda @data = @user.comments olacak
-      @data = []
+      @data = @user.comments
     end
 
     render layout: "profile", locals: {page: sayfa}

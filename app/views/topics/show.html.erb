@@ -5,8 +5,8 @@
     <span class='forum-name'>
       <%= link_to @topic.forum.name, @topic.forum %>
     </span>
-    <%= link_to_unless_current @topic.user.username, profile_path(@topic.user) %> tarafından
-    <%= time_ago_in_words @topic.created_at %> önce gönderildi.
+    <%= link_to_unless_current @topic.user.username, profile_path(@topic.user) %>
+    tarafından <%= time_ago_in_words @topic.created_at %> önce gönderildi.
   </small>
 </div>
 <div>
@@ -21,6 +21,6 @@
     <% end %>
 </div>
 <div class="comments">
-  <h2>Yorumlar (#)</h2><hr>
-  Yorumlar burada listelenecek
+  <h2>Yorumlar (<%= @topic.comments.count %>)</h2><hr>
+  <%= render @topic.comments %>
 </div>

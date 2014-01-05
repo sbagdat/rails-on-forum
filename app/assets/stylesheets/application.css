@@ -26,10 +26,10 @@
 
 
 .topic{
-  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   padding: 10px 0 20px;}
 
-  .topic:first-child{
+  .topic:last-child{
     border: none;}
 
   .topic p{font-size: .85em;}
@@ -43,9 +43,8 @@
   font-size: .70em;
   margin-top: 5px;}
 
-.forum-name{
+.forum-name, .topic-name{
   background: #eee;
-  border-radius: 5px;
-  padding: 3px 5px;
-  margin-right: 5px;
+  border-radius: 10px;
+  padding: 3px 10px;
 }

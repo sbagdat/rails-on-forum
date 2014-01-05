@@ -1,0 +1,11 @@
+<div class="comment">
+  <p><%= comment.body %></p>
+  <small class="details">
+    <%= link_to comment.user.username, profile_path(comment.user) %> tarafından
+    <%= time_ago_in_words comment.created_at %> önce gönderildi.
+    <% if current_user == comment.user %>
+      <%= link_to "Düzenle", edit_comment_path(comment) %> |
+      <%= link_to "Sil", comment, method: :delete %>
+    <% end %>
+  </small>
+</div>
