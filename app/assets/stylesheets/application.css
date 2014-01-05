@@ -5,12 +5,46 @@
  *= require_tree .
  */
 
-.field_with_errors label{ color: #f04124; }
+.field_with_errors label{color: #f04124;}
 
-.profile-image {
+.profile-image{
   margin-top: 15px;
-  border-radius: 50%; }
+  border-radius: 50%;}
 
 .new.button{
-  margin-top: 15px;
+  margin-top: 15px;}
+
+.forums.panel {
+  background-color: #fff;
+  border: none;
+  border-right: 1px solid #eee;
+}
+
+.topics.panel{
+  background-color: #fff;
+  padding:30px 15px;}
+
+
+.topic{
+  border-top: 1px solid #ccc;
+  padding: 10px 0 20px;}
+
+  .topic:first-child{
+    border: none;}
+
+  .topic p{font-size: .85em;}
+
+  .topic .answer-count{
+    padding: 25px 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;}
+
+.details{
+  font-size: .70em;
+  margin-top: 5px;}
+
+.forum-name{
+  background: #eee;
+  border-radius: 5px;
+  padding: 3px 5px;
 }

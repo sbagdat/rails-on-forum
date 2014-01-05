@@ -3,8 +3,6 @@
   <% if @data.blank? %>
     <p>Kullanıcıya ait <%= page %> bulunmamaktadır.</p>
   <% else %>
-    <% @data.each do |data| %>
-      <div><%= data %></div>
-    <% end %>
+    <%= render @data %>
   <% end %>
 <% end %>

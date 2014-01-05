@@ -4,9 +4,15 @@
       <h1 class="left"><%= @forum.name %> Forumu</h1>
       <% if signed_in? %>
         <%= link_to 'Konu Aç', new_forum_topic_path(@forum),
-                               class: 'small secondary new button right round' %><hr>
+                               class: 'small new button right radius alert' %><hr>
       <% end %>
     </div>
-    <div class="columns">Bu foruma ait konular burada listelenecek...</div>
+    <div class="topics panel columns radius ">
+      <% if @forum.topics.any? %>
+        <%= render @forum.topics %>
+      <% else %>
+        <p>Henüz hiç bir konu açılmamış.</p>
+      <% end%>
+    </div>
   </div>
 <% end %>
