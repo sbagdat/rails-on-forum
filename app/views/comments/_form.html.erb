@@ -1,5 +1,7 @@
-<%= form_for form_params(@topic, @comment) do |form| %>
+<%= form_for form_params(@topic, @comment), data: {abide: ''} do |form| %>
   <%= render 'layouts/form_errors', object: @comment %>
-  <%= form.text_area :body, class:'comment-area' %>
+  <div>
+    <%= form.text_area :body, class:'comment-area', required: true, pattern: :alpha %>
+    <%= show_error_message('Bu alan boş bırakılamaz.') %></div>
   <%= form.submit class:'tiny button radius' %>
 <% end %>
