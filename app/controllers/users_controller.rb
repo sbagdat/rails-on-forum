@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
     if @user.save
       login(@user)
-      redirect_to profile_path(@user), notice: 'Aramıza hoş geldin!'
+      redirect_to root_url, notice: 'Aramıza hoş geldin!'
     else
       render :new
     end
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     end
 
     if @user.update(update_params)
-      redirect_to profile_path(@user), notice: 'Profil bilgileriniz güncellendi.'
+      redirect_to profile_url(@user), notice: 'Profil bilgileriniz güncellendi.'
     else
       render :edit, layout: "profile"
     end
@@ -50,7 +50,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to '/'
+    redirect_to root_url
   end
 
   private

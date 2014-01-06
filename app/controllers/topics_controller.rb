@@ -22,7 +22,7 @@ class TopicsController < ApplicationController
     @topic.user = current_user
 
     if @topic.save
-      redirect_to @topic, notice: 'Konu başarıyla oluşturuldu'
+      redirect_to topic_url(@topic), notice: 'Konu başarıyla oluşturuldu'
     else
       render :new
     end
@@ -30,7 +30,7 @@ class TopicsController < ApplicationController
 
   def update
     if @topic.update(topic_params)
-      redirect_to @topic, notice: 'Konu başarıyla güncellendi.'
+      redirect_to topic_url(@topic), notice: 'Konu başarıyla güncellendi.'
     else
       render :edit
     end
