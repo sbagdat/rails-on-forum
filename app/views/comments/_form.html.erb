@@ -1,15 +1,6 @@
 <% form_params = params[:action] == 'new' ? [@topic, @comment] : @comment %>
 <%= form_for form_params do |form| %>
-  <% if @comment.errors.any? %>
-    <div class="row panel callout radius">
-      <p>Aşağıdaki hataları düzeltip, tekrar deneyiniz.</p>
-      <ul class="square">
-        <% @comment.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render 'layouts/form_errors', object: @comment %>
   <%= form.text_area :body, class:'comment-area' %>
   <%= form.submit class:'tiny button radius' %>
 <% end %>

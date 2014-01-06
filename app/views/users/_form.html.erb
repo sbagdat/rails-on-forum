@@ -1,14 +1,5 @@
 <%= form_for @user, data: {abide: ''} do |form| %>
-  <% if @user.errors.any? %>
-    <div class="row panel callout radius">
-      <p>Aşağıdaki hataları düzeltip, tekrar deneyiniz.</p>
-      <ul class="square">
-        <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render 'layouts/form_errors', object: @user %>
   <div class="row">
     <div class="large-6 columns">
       <%= form.label :first_name %>
