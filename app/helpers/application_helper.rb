@@ -8,4 +8,8 @@ module ApplicationHelper
       alert:  'info',
       error:  'warning' }[type]
   end
+
+  def form_params(parent, child)
+    child.new_record? ? [parent, child] : child
+  end
 end

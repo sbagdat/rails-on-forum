@@ -1,5 +1,4 @@
-<% form_params = params[:action] == 'new' ? [@topic, @comment] : @comment %>
-<%= form_for form_params do |form| %>
+<%= form_for form_params(@topic, @comment) do |form| %>
   <%= render 'layouts/form_errors', object: @comment %>
   <%= form.text_area :body, class:'comment-area' %>
   <%= form.submit class:'tiny button radius' %>

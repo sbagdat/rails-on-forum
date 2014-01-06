@@ -1,6 +1,5 @@
 <div class="large-12 medium-12 medium-centered columns">
-<% form_url = params[:action] == 'new' ? forum_topics_path : @topic %>
-<%= form_for @topic, url: form_url do |form| %>
+<%= form_for form_params(@forum, @topic) do |form| %>
   <%= render 'layouts/form_errors', object: @topic %>
   <div>
     <%= form.label :title %>
