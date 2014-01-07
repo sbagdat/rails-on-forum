@@ -1,7 +1,7 @@
 <% provide :title, 'Yorum Ekle' %>
 <div class="topics panel columns radius ">
   <h2><%= @topic.title %></h2>
-  <p><%= @topic.body  %></p>
+  <p><%= markdown @topic.body  %></p>
   <%= topic_info(@topic) %>
 </div>
 <div class="small-11 columns offset-1">

@@ -991,3 +991,10 @@ $topbar-margin-bottom: 15px;
 // $topbar-sticky-class: ".sticky";
 // $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
 @import 'foundation';
+
+pre{
+  @extend .panel;
+  @extend .radius;
+  padding: 10px 0 10px 20px;
+  margin: 20px 0;
+}

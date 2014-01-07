@@ -1,7 +1,7 @@
 <% provide :title, "Konu: #{@topic.title}" %>
 <div class="topics panel columns radius ">
   <h2><%= @topic.title %></h2>
-  <p><%= @topic.body  %></p>
+  <p><%= markdown @topic.body  %></p>
   <%= topic_info(@topic) %>
 </div>
 <div>

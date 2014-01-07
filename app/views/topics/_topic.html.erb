@@ -1,7 +1,7 @@
 <div class="topic columns">
   <div class="small-10 columns">
     <h5><%= link_to topic.title, topic %></h5>
-    <p><%= truncate topic.body, length: 50  %></p>
+    <p><%= markdown truncate(topic.body, length: 50, escape:false), links: false  %></p>
     <%= topic_info(topic) %>
   </div>
   <div class="small-2 columns text-center answer-count">
