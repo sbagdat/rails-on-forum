@@ -43,8 +43,13 @@
   font-size: .70em;
   margin-top: 5px;}
 
-.forum-name, .topic-name{
+.badge{
   background: #eee;
   border-radius: 10px;
   padding: 3px 10px;
+  margin-right: 10px;
+}
+
+.user-thumb{
+  border-radius: 50%;
 }

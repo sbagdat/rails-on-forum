@@ -2,13 +2,7 @@
   <div class="small-10 columns">
     <h5><%= link_to topic.title, topic %></h5>
     <p><%= truncate topic.body, length: 50  %></p>
-    <small class="details">
-      <% unless params[:action] == 'show' && params[:controller] == 'forums' %>
-        <%= link_to topic.forum.name, topic.forum, class: 'forum-name' %>
-      <% end %>
-       <%= link_to_unless_current topic.user.username, profile_path(topic.user) %>
-      tarafından <%= time_ago_in_words topic.created_at %> önce gönderildi.
-   </small>
+    <%= topic_info(topic) %>
   </div>
   <div class="small-2 columns text-center answer-count">
     <strong><%= topic.comments_count %></strong><br>Yorum
