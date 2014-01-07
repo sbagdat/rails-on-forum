@@ -4,14 +4,13 @@ class CommentsController < ApplicationController
     validate_permission!(select_comment.user)
   end
   before_action :select_comment, only: [:edit, :update, :destroy]
+  before_action only: [:new, :create] {@topic = Topic.find(params[:topic_id])}
 
   def new
-    @topic = Topic.find(params[:topic_id])
     @comment = @topic.comments.new
   end
 
   def create
-    @topic = Topic.find(params[:topic_id])
     @comment = @topic.comments.new(comment_params)
     @comment.user = current_user
 

@@ -23,9 +23,11 @@ class UsersController < ApplicationController
     sayfa = params[:sayfa] || 'konular'
 
     if sayfa == 'konular'
-      @data = @user.topics
+      @user = User.includes(:topics).find_by_username(params[:id])
+      @data = @user.topics.includes(:forum)
     else
-      @data = @user.comments
+      @user = User.includes(:comments).find_by_username(params[:id])
+      @data = @user.comments.includes(:topic)
     end
 
     render layout: "profile", locals: {page: sayfa}
