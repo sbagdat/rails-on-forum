@@ -15,9 +15,13 @@ class User < ActiveRecord::Base
                          uniqueness: { case_sensitive: false },
                          email:      true
 
-  def name() "#{first_name} #{last_name}" end
+  def name
+   "#{first_name} #{last_name}"
+ end
 
-  def to_param() username end
+  def to_param
+   username
+ end
 
   def avatar_url(size = 160)
     hash_value = Digest::MD5.hexdigest(email.downcase)
