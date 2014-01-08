@@ -24,6 +24,9 @@
   background-color: #fff;
   padding:30px 15px;}
 
+.topic-area{
+  min-height: 200px;
+}
 
 .topic{
   border-bottom: 1px solid #ccc;
