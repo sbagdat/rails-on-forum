@@ -30,9 +30,8 @@
     </div>
     <div class="large-6 columns">
       <%= form.label :password_confirmation %>
-      <%= form.password_field :password_confirmation, required: true, pattern: :password %>
-      <%= show_error_message('Parola, bir büyük harf, bir rakam ve bir
-      de özel karakter içermeli ve en az 8 karakterden oluşmalıdır.') %>
+      <%= form.password_field :password_confirmation, required: true, data: { equalto: 'user_password' } %>
+      <%= show_error_message('Girmiş olduğunuz parolalar eşleşmemektedir.') %>
     </div>
     <% end %>
     <div class="large-12 columns">
