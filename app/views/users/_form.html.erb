@@ -3,12 +3,12 @@
   <div class="row">
     <div class="large-6 columns">
       <%= form.label :first_name %>
-      <%= form.text_field :first_name, required: true, pattern: :alpha %>
+      <%= form.text_field :first_name, required: true %>
       <%= show_error_message %>
     </div>
     <div class="large-6 columns">
       <%= form.label :last_name %>
-      <%= form.text_field :last_name, required: true, pattern: :alpha %>
+      <%= form.text_field :last_name, required: true %>
       <%= show_error_message %>
     </div>
     <div class="large-12 columns">

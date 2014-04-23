@@ -3,7 +3,7 @@
   <%= render 'layouts/form_errors', object: @topic %>
   <div>
     <%= form.label :title %>
-    <%= form.text_field :title, required: true, pattern: :alpha %>
+    <%= form.text_field :title, required: true %>
     <%= show_error_message('Bu alan boş bırakılamaz.') %>
   </div>
   <div>
